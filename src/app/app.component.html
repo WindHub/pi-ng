@@ -1,0 +1,21 @@
+<header>
+  <my-navbar>
+  </my-navbar>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
+<footer class="footer">
+  <div class="container">
+    <nav class="nav nav-inline">
+      <li class="nav-item"><a [href]="url">Pi</a>, an open-sourced user authentication system.</li>
+      <span class="hidden-sm-down">
+        <li class="nav-item"><a class="nav-link" href="#">{{ 'FOOTER_ABOUT' | translate }}</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">{{ 'FOOTER_HELP' | translate }}</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">{{ 'FOOTER_FEEDBACK' | translate }}</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">{{ 'FOOTER_TOS' | translate }}</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">{{ 'FOOTER_LANG' | translate }}</a></li>
+      </span>
+    </nav>
+  </div>
+</footer>

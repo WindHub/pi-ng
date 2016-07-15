@@ -1,0 +1,15 @@
+{
+  "NAV_MAIN_HOME": "Timeline",
+  "NAV_MAIN_APP": "Apps",
+  "NAV_USER_LOGIN": "Login",
+  "NAV_USER_REGISTER": "Sign up",
+  "NAV_USER_LOGOUT": "Logout",
+  "NAV_USER_INBOX": "Inbox",
+  "NAV_USER_SETTINGS": "Settings",
+  "NAV_USER_PROFILE": "Profile",
+  "FOOTER_ABOUT": "About",
+  "FOOTER_HELP": "Help",
+  "FOOTER_FEEDBACK": "Feedback",
+  "FOOTER_TOS": "TOS",
+  "FOOTER_LANG": "中文"
+}

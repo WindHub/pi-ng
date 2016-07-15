@@ -1,0 +1,52 @@
+<div class="container m-t-2">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+      <div class="card">
+        <div class="card-block">
+          <h3 class="card-title">Sign up</h3>
+          <form>
+            <fieldset class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" [(ngModel)]="user.username" name="username" placeholder="Username / Email">
+            </fieldset>
+            <fieldset class="form-group">
+              <label for="username">Email</label>
+              <input type="text" class="form-control" [(ngModel)]="user.email" name="username" placeholder="Email">
+            </fieldset>
+            <fieldset class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" [(ngModel)]="user.password" name="password" placeholder="Password">
+            </fieldset>
+            <fieldset class="form-group">
+              <label for="password">Re-enter Password</label>
+              <input type="password" class="form-control" name="password" placeholder="Re-enter Password">
+            </fieldset>
+            <fieldset class="form-group">
+              <label class="c-input c-checkbox">
+                <input type="checkbox">
+                <span class="c-indicator"></span>
+                I accept terms of use and privacy policy.
+              </label>
+            </fieldset>
+            <fieldset class="form-group">
+              <label>CAPTCHA</label>
+              <span>There should be a captcha service.</span>
+            </fieldset>
+            <button type="submit" class="btn btn-primary m-r-1">Sign up</button>
+          </form>
+        </div>
+      </div>
+      <p>Already have an account? <a class="btn btn-sm btn-secondary" [routerLink]="['/user/login']">Login <i class="fa fa-angle-right" aria-hidden="true"></i></a></p>
+      <p>Forget password? <a href="#" class="btn btn-sm btn-secondary">Reset password <i class="fa fa-angle-right" aria-hidden="true"></i></a></p>
+      <ul class="list-inline">
+          <li class="list-inline-item">Login with</li>
+          <li class="list-inline-item"><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+          <li class="list-inline-item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          <li class="list-inline-item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li class="list-inline-item"><a href="#"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+          <li class="list-inline-item"><a href="#"><i class="fa fa-weibo" aria-hidden="true"></i></a></li>
+          <li class="list-inline-item"><a href="#"><i class="fa fa-wechat" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</div>

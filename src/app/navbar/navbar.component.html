@@ -1,0 +1,32 @@
+<nav class="navbar navbar-light bg-faded">
+  <button class="navbar-toggler hidden-sm-up" type="button">
+    &#9776;
+  </button>
+  <div class="collapse navbar-toggleable-xs">
+    <div>
+      <a class="navbar-brand" [routerLink]="['']">{{ api.title }}</a>
+      <ul class="nav navbar-nav">
+        <li *ngFor="let nav of navs.login.main" class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link" [routerLink]="[nav.link]">{{ 'NAV_MAIN_' + nav.name.toUpperCase() | translate }}</a>
+        </li>
+        <li *ngFor="let nav of navs.default.main" class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link" [routerLink]="[nav.link]">{{ 'NAV_MAIN_' + nav.name.toUpperCase() | translate }}</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav pull-xs-right">
+        <li *ngFor="let nav of navs.default.user" class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link" [routerLink]="[nav.link]">{{ 'NAV_USER_' + nav.name.toUpperCase() | translate }}</a>
+        </li>
+        <li class="nav-item btn-group" (click)="$event.preventDefault()" dropdown>
+          <a class="dropdown-toggle nav-link" href dropdownToggle>SkyZH <span class="label label-pill label-default">23</span><span class="caret"></span></a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <h6 class="dropdown-header">Signed in as SkyZH</h6>
+            <a *ngFor="let nav of navs.login.user" class="dropdown-item" [routerLink]="[nav.link]">
+              {{ 'NAV_USER_' + nav.name.toUpperCase() | translate }}
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
