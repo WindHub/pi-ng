@@ -11,5 +11,7 @@
   "FOOTER_HELP": "Help",
   "FOOTER_FEEDBACK": "Feedback",
   "FOOTER_TOS": "TOS",
-  "FOOTER_LANG": "中文"
+  "FOOTER_LANG": "中文",
+  "STATUS_CODE_401.1": "Wrong username or password",
+  "STATUS_CODE_401.5": "Authorization token not received"
 }

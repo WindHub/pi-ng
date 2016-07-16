@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
+
+import { LoginService } from '../services'
 
 @Component({
   selector: 'my-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  directives: [ROUTER_DIRECTIVES],
+  providers: [LoginService]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  constructor() {
-    // Do stuff
-  }
-
-  ngOnInit() {
-    console.log('Hello Home');
+  constructor(
+    private loginService: LoginService
+  ) {
   }
 
 }

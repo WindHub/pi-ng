@@ -1,25 +1,38 @@
-<div class="container m-t-2">
+<div class="container m-t-2" *ngIf="!loginService.isLoggedIn">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
       <div class="card">
         <div class="card-block">
           <h3 class="card-title">Login</h3>
-          <form>
+          <form (ngSubmit)="onSubmit()" #loginForm="ngForm" [hidden]="isActive || loginService.isLoggedIn">
             <fieldset class="form-group">
               <label for="username">Username</label>
-              <input type="text" class="form-control" [(ngModel)]="user.username" name="username" placeholder="Username / Email">
+              <input type="text" class="form-control" [(ngModel)]="login.username" placeholder="Username / Email" name="username" #username="ngModel" required>
             </fieldset>
+            <div [hidden]="username.valid || username.pristine" class="alert alert-warning">
+              Username / Email is required
+            </div>
             <fieldset class="form-group">
               <label for="password">Password</label>
-              <input type="password" class="form-control" [(ngModel)]="user.password" name="password" placeholder="Password">
+              <input type="password" class="form-control" [(ngModel)]="login.password" placeholder="Password" name="password" #password="ngModel" required>
             </fieldset>
-            <button type="submit" class="btn btn-primary m-r-1">Login</button>
+            <div [hidden]="password.valid || password.pristine" class="alert alert-warning">
+              Password is required
+            </div>
+            <button type="submit" class="btn btn-primary m-r-1" [disabled]="!loginForm.form.valid">Login</button>
             <label class="c-input c-checkbox">
-              <input type="checkbox">
+              <input type="checkbox" [(ngModel)]="login.remember" name="remember">
               <span class="c-indicator"></span>
               Remember me for 14 days
             </label>
           </form>
+          <div class="text-xs-center" [hidden]="!isActive">
+            <p><my-load-indicator [loading]="true"></my-load-indicator></p>
+            <button class="btn btn-secondary" (click)="onCancel()">Cancel</button>
+          </div>
+          <div *ngIf="errorCode" class="alert alert-danger m-t-1">
+            {{ 'STATUS_CODE_' + errorCode | translate }}
+          </div>
         </div>
       </div>
       <p>If you don't have an account yet, <a class="btn btn-sm btn-secondary" [routerLink]="['/user/signup']">Sign up now <i class="fa fa-angle-right" aria-hidden="true"></i></a></p>
@@ -33,6 +46,19 @@
           <li class="list-inline-item"><a href="#"><i class="fa fa-weibo" aria-hidden="true"></i></a></li>
           <li class="list-inline-item"><a href="#"><i class="fa fa-wechat" aria-hidden="true"></i></a></li>
       </ul>
+    </div>
+  </div>
+</div>
+<div class="container m-t-2" [hidden]="!loginService.isLoggedIn">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+      <div class="card">
+        <div class="card-block">
+          <h3 class="card-title">Login</h3>
+          <p class="card-text">You're logged in.</p>
+          <a class="card-link" [routerLink]="['/']">Home</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>

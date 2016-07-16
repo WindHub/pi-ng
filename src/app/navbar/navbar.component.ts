@@ -16,7 +16,6 @@ export class NavbarComponent {
   navs = {
     default: {
       main: [
-        { name: 'app', link: 'app' },
       ],
       user: [
         { name: 'login', link: 'user/login' },
