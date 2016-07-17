@@ -27,7 +27,7 @@
             </label>
           </form>
           <div class="text-xs-center" [hidden]="!isActive">
-            <p><my-load-indicator [loading]="true"></my-load-indicator></p>
+            <p class="text-info"><my-load-indicator [loading]="true"></my-load-indicator></p>
             <button class="btn btn-secondary" (click)="onCancel()">Cancel</button>
           </div>
           <div *ngIf="errorCode" class="alert alert-danger m-t-1">

@@ -12,3 +12,8 @@ export class App {
   public subject: string;
   public description: string;
 }
+
+export class AppToken {
+  public app: App;
+  public token: string;
+}

@@ -1,0 +1,19 @@
+<a class="app-card" [href]="app.entrance_url" (click)="onNavigate(event)">
+  <div class="card text-xs-center" [ngClass]="{ 'card-danger card-inverse': isError }">
+    <div class="card-block" *ngIf="!isLoading">
+      <h3 class="card-title">{{ app.name }}</h3>
+      <small class="card-text text-muted">
+        <span *ngIf="!isError">{{ app.description }}</span>
+        <span *ngIf="isError">Error while loging to WindOJ</span>
+      </small>
+      <br>
+      <small *ngIf="loginService.isLoggedIn" class="card-text">
+        <span *ngIf="!isError">Login with one click</span>
+        <span *ngIf="isError">Click to view without logging in</span>
+      </small>
+    </div>
+    <div class="card-block" *ngIf="isLoading">
+      <span class="card-text"><my-load-indicator [loading]="true"></my-load-indicator></span>
+    </div>
+  </div>
+</a>

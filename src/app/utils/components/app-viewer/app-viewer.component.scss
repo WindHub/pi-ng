@@ -1,0 +1,6 @@
+.app-card {
+  color: inherit !important;
+  .card {
+    transition: background-color 0.5s ease-out, color 0.5s ease-out;
+  }
+}

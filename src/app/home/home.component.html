@@ -28,13 +28,6 @@
         <small class="card-text text-muted">You have 23 unread messages.</small>
       </div>
     </div>
-    <a *ngFor="let app of apps" [href]="app.entrance_url">
-      <div class="card card-inverse card-primary text-xs-center">
-        <div class="card-block">
-          <h3 class="card-title">{{ app.name }}</h3>
-          <small class="card-text text-muted">{{ app.description }}</small>
-        </div>
-      </div>
-    </a>
+    <my-app-viewer [app]="app" *ngFor="let app of apps"></my-app-viewer>
   </div>
 </div>

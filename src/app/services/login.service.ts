@@ -22,6 +22,7 @@ export class LoginService {
     }
     return LoginService.instance;
   }
+  
   public login(login: Login): Observable<Login> {
     let headers = new Headers({
       'Content-Type': 'application/json'
@@ -41,12 +42,14 @@ export class LoginService {
   }
 
   public checkLoggedIn(): Observable<{}> {
+
     let headers = new Headers({
       'Content-Type': 'application/json'
     });
     let request = this.http
       .post(this.myUrl, "", {headers: headers})
-      .map(this.extractData);
+      .map(this.extractData)
+      .share();
     request.subscribe(data => {
       this.isLoggedIn = true;
       this.user = <User>(data.user);
