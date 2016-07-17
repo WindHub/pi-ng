@@ -6,14 +6,7 @@ import '@angular/http';
 import '@angular/router';
 import '@angular/forms';
 
-import 'rxjs';
-import 'rxjs/add/observable/throw';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/toPromise';
+import 'rxjs/Rx';
 
 import 'ng2-translate/ng2-translate';
 import 'ng2-bootstrap/ng2-bootstrap';

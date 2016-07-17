@@ -14,13 +14,13 @@
         </li>
       </ul>
       <ul class="nav navbar-nav pull-xs-right">
-        <li *ngFor="let nav of navs.default.user" class="nav-item" [routerLinkActive]="['active']">
+        <li *ngFor="let nav of navs.default.user" class="nav-item" [routerLinkActive]="['active']" [hidden]="loginService.isLoggedIn">
           <a class="nav-link" [routerLink]="[nav.link]">{{ 'NAV_USER_' + nav.name.toUpperCase() | translate }}</a>
         </li>
-        <li class="nav-item btn-group" (click)="$event.preventDefault()" dropdown>
-          <a class="dropdown-toggle nav-link" href dropdownToggle>SkyZH <span class="label label-pill label-default">23</span><span class="caret"></span></a>
+        <li class="nav-item btn-group" (click)="$event.preventDefault()" dropdown *ngIf="loginService.isLoggedIn">
+          <a class="dropdown-toggle nav-link" href dropdownToggle>{{ loginService.user.name }} <span class="label label-pill label-default">23</span><span class="caret"></span></a>
           <div class="dropdown-menu dropdown-menu-right">
-            <h6 class="dropdown-header">Signed in as SkyZH</h6>
+            <h6 class="dropdown-header">Signed in as {{ loginService.user.name }}</h6>
             <a *ngFor="let nav of navs.login.user" class="dropdown-item" [routerLink]="[nav.link]">
               {{ 'NAV_USER_' + nav.name.toUpperCase() | translate }}
             </a>

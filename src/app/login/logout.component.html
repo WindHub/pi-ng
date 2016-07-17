@@ -1,0 +1,31 @@
+<div class="container m-t-2" *ngIf="loginService.isLoggedIn">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+      <div class="card">
+        <div class="card-block">
+          <h3 class="card-title">Logout</h3>
+          <div class="text-xs-center" [hidden]="!isActive">
+            <p><my-load-indicator [loading]="true"></my-load-indicator></p>
+            <button class="btn btn-secondary" (click)="onCancel()">Cancel</button>
+          </div>
+          <div *ngIf="errorCode" class="alert alert-danger m-t-1">
+            {{ 'STATUS_CODE_' + errorCode | translate }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container m-t-2" [hidden]="loginService.isLoggedIn">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+      <div class="card">
+        <div class="card-block">
+          <h3 class="card-title">Logout</h3>
+          <p class="card-text">You're logged out.</p>
+          <a class="card-link" [routerLink]="['/']">Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

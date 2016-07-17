@@ -11,5 +11,9 @@
   "buildOnSave": false,
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "useCache": true,
+    "useWebpackText": true
+  }
 }

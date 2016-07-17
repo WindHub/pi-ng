@@ -9,7 +9,7 @@ import { TranslateService, TranslateLoader, TranslateStaticLoader } from 'ng2-tr
 import { AppComponent } from './app/app.component';
 import { APP_ROUTER_PROVIDERS } from './app/app.routes';
 
-import { LoginService } from './app/services';
+import { LOGIN_SERVICE_PROVIDER } from './app/services';
 
 if (process.env.ENV === 'build') {
   enableProdMode();
@@ -37,6 +37,6 @@ bootstrap(AppComponent, [
     },
     TranslateService,
     provide(BrowserXhr, {useClass: CORSBrowserXHR}),
-    LoginService
+    LOGIN_SERVICE_PROVIDER
   ])
   .catch(err => console.error(err));
