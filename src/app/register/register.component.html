@@ -4,35 +4,36 @@
       <div class="card">
         <div class="card-block">
           <h3 class="card-title">Sign up</h3>
-          <form>
+          <form [formGroup]="form">
             <fieldset class="form-group">
-              <label for="username">Username</label>
-              <input type="text" class="form-control" [(ngModel)]="user.username" name="username" placeholder="Username / Email">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" [(ngModel)]="user.name" name="name" placeholder="Name" formControlName="name">
             </fieldset>
+            <div [hidden]="form.controls['name'].valid || form.controls['name'].pristine" class="alert alert-warning">
+              {{ 'STATUS_CODE_400.3' | translate}}
+            </div>
             <fieldset class="form-group">
-              <label for="username">Email</label>
-              <input type="text" class="form-control" [(ngModel)]="user.email" name="username" placeholder="Email">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" [(ngModel)]="user.email" name="email" placeholder="Email" formControlName="email">
             </fieldset>
+            <div [hidden]="form.controls['email'].valid || form.controls['email'].pristine" class="alert alert-warning">
+              {{ 'STATUS_CODE_400.7' | translate}}
+            </div>
             <fieldset class="form-group">
               <label for="password">Password</label>
-              <input type="password" class="form-control" [(ngModel)]="user.password" name="password" placeholder="Password">
+              <input type="password" class="form-control" [(ngModel)]="user.password" name="password" placeholder="Password" formControlName="password">
             </fieldset>
-            <fieldset class="form-group">
-              <label for="password">Re-enter Password</label>
-              <input type="password" class="form-control" name="password" placeholder="Re-enter Password">
-            </fieldset>
-            <fieldset class="form-group">
-              <label class="c-input c-checkbox">
-                <input type="checkbox">
-                <span class="c-indicator"></span>
-                I accept terms of use and privacy policy.
-              </label>
-            </fieldset>
+            <div [hidden]="form.controls['password'].valid || form.controls['password'].pristine" class="alert alert-warning">
+              {{ 'STATUS_CODE_400.5' | translate}}
+            </div>
             <fieldset class="form-group">
               <label>CAPTCHA</label>
-              <span>There should be a captcha service.</span>
+              <input type="text" class="form-control" placeholder="Please enter the verification code">
             </fieldset>
-            <button type="submit" class="btn btn-primary m-r-1">Sign up</button>
+            <fieldset class="form-group">
+              <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Sign up</button>
+            </fieldset>
+            <small class="text-muted">By clicking sign up, you accept terms of use and privacy policy.</small>
           </form>
         </div>
       </div>

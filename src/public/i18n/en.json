@@ -13,5 +13,13 @@
   "FOOTER_TOS": "TOS",
   "FOOTER_LANG": "中文",
   "STATUS_CODE_401.1": "Wrong username or password",
-  "STATUS_CODE_401.5": "Authorization token not received"
+  "STATUS_CODE_401.6": "Authorization token not received",
+  "STATUS_CODE_400.1": "请求不合法",
+  "STATUS_CODE_400.2": "请填写用户名",
+  "STATUS_CODE_400.3": "用户名只能包含 5~20 个数字或字母",
+  "STATUS_CODE_400.4": "请填写密码",
+  "STATUS_CODE_400.5": "密码只能包含 6~20 个数字字母或特殊字符",
+  "STATUS_CODE_400.6": "请填写邮箱",
+  "STATUS_CODE_400.7": "邮箱不合法",
+  "STATUS_CODE_400.9": "请同意用户许可协议"
 }

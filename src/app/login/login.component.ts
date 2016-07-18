@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit, OnDestroy {
             },
             error => {
               this.isActive = false;
-              this.errorCode = 401.5;
+              this.errorCode = 401.6;
             }
           );
         },
