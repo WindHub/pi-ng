@@ -33,7 +33,7 @@ export class AppService {
       'Content-Type': 'application/json'
     });
     return this.http
-      .post(appToken.app.papi_url + '/token', JSON.stringify({ token: appToken.token }), {headers: headers})
+      .post('//' + appToken.app.papi_url + '/token', JSON.stringify({ token: appToken.token }), {headers: headers})
       .map(this.extractData);
   }
 
